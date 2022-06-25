@@ -9,6 +9,7 @@ class ReportsDB {
             this.EmployeesHours[employeeName] = []
         }
         this.EmployeesHours[employeeName].push(totalHoursReport);
+        return totalHoursReport;
     }
     
     getMonthlyEmployeeReportByDay = (employeeName: string, month: number) => {

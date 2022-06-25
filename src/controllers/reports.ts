@@ -18,7 +18,7 @@ const getDailyReportByMonth = async(req: Request, res: Response, next: NextFunct
     let employeeName: string = req.params.employeeName;
     let month: number = parseInt(req.params.month, 10);
 
-    let reports = reportService.getMonthlyEmployeeReportByDayFromDB(employeeName, month);
+    let reports = reportService.getDailyEmployeeReportByMonthFromDB(employeeName, month);
     return res.status(200).json({
         title: "daily report for " + employeeName + " for the " + month + " month",
         reports: reports

@@ -14,10 +14,10 @@ class ReportsService {
         let end = moment(employeeRecord.endHour, formatWithHours);
         let totalHours = end.diff(start, "hours");
         let date = moment(employeeRecord.startHour, dateFormat).format(dateFormat);
-        DB.insertReport(employeeRecord.employeeName, {date: date, totalHours: totalHours});
+        return DB.insertReport(employeeRecord.employeeName, {date: date, totalHours: totalHours});
     }
 
-    getMonthlyEmployeeReportByDayFromDB = (employeeName: string, month: number) => {
+    getDailyEmployeeReportByMonthFromDB = (employeeName: string, month: number) => {
         return DB.getMonthlyEmployeeReportByDay(employeeName, month);
     }
 
