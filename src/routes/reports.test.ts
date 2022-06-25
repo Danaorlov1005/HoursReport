@@ -2,7 +2,7 @@ import router from './reports';
 import request from 'supertest';
 
 describe("Test the root path", () => {
-    test("It should response the POST method", (done) => {
+    test("It should responsd 200 to the correct POST method", (done) => {
        request(router)
         .post("/reports").send({
           employeeName:"steve",
@@ -13,7 +13,7 @@ describe("Test the root path", () => {
         done();
     });
     
-    test("It should response the POST method", (done) => {
+    test("It should respond 400 to invalid date POST method", (done) => {
       request(router)
        .post("/reports").send({
          employeeName:"steve",
